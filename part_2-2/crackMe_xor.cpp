@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <string.h>
 
 void CheckPass(int *XoredPassword) {
@@ -27,7 +27,7 @@ int main() {
     printf("Enter the 10 character password: ");
     scanf("%10s", toEncrypt);
     int stringLength = strlen(toEncrypt);
-    
+
     int keyStore[10] = {85, 86, 87, 88, 89, 90, 81, 82, 83, 84};
     int XoredDecimal[stringLength] = {};
 
