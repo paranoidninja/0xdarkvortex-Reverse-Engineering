@@ -24,22 +24,22 @@ void CheckPass(int *XoredPassword) {
 int main(int argc, char *argv[]) {
     
     if (argc != 2) {
-        printf("Help:\n%s <password 10 chars max>\n", argv[0]);
+        printf("Help:\n%s <10 character serial key>\n", argv[0]);
     }
     else {
     //     char toEncrypt[10] = argv[1];
         int stringLength = strlen(argv[1]);
-        if (stringLength > 10) {
-            printf("[-] Password must be a maximum of 10 characters. Please enter a shorter password\n");
+        if ((stringLength > 10) || (stringLength < 10)) {
+            printf("[-] Serial key must be of 10 characters. Please recheck your key\n");
         }
         else {
+            int XoredDecimal[10] = {};
             int keyStore[10] = {85, 86, 87, 88, 89, 90, 81, 82, 83, 84};
-            int XoredDecimal[stringLength] = {};
 
-            for (int i=0; i<stringLength; i++) {
+            for (int i=0; i<10; i++) {
                 XoredDecimal[i] = ((int)(argv[1][i]))^(keyStore[i]);
             }
-            
+
             CheckPass(XoredDecimal);
         }
     }
