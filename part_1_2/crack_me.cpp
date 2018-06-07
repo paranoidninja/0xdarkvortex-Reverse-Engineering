@@ -1,4 +1,6 @@
-//#include <stdio.h>
+//Author : Paranoid Ninja
+//Email  : paranoidninja@protonmail.com
+
 #include <iostream>
 #include <string.h>
 
